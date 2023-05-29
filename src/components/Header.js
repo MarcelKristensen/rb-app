@@ -33,26 +33,21 @@ export default function Header() {
           <span>Login</span> <img src={require('../icons/login.png')} alt='login'></img>
         </Box>
       </Box>
-
       <Box sx={{
         display: 'flex',
         flexDirection: 'row'
       }}>
-
         <Box sx={{
           mx: '20%',
           display: 'flex',
           justifyContent: 'flex-start',
           alignItems: 'center',
-        }}>
-          
+        }}>          
           <img className="headerLogo" src={require('../images/RBLogo.png')} width={"100px"} alt='logo'></img>
-
           <div>
             <Button>Om RB</Button>
             <Button> Nyheder</Button>
             <Button>Medlemskab</Button>
-
             <Button
               onClick={handleClick}
               onMouseOver={handleClick}
@@ -73,14 +68,11 @@ export default function Header() {
               <MenuItem onClick={handleClose}>Drenge U12</MenuItem>
               <MenuItem onClick={handleClose}>Drenge U13</MenuItem>
             </Menu>
-
             <Button>Kampoversigt</Button>
             <Button>Webshop</Button>
           </div>
         </Box>
       </Box>
-
-
     </>
   )
 }
