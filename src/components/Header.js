@@ -69,7 +69,7 @@ export default function Header() {
               <MenuItem onClick={handleClose}>Drenge U13</MenuItem>
             </Menu>
             <Button>Kampoversigt</Button>
-            <Button>Webshop</Button>
+            <Button>Webshops</Button>
           </div>
         </Box>
       </Box>
