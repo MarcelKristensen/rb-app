@@ -1,13 +1,34 @@
 import './App.css';
-import Header from './components/Header';
-import Forside from './pages/Forside';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Footer from './components/footer';
+import Test from './pages/test';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#DCDCDC' //lys grå
+    },
+    secondary: {
+      main: '#F3B820' //orange
+    },
+  },
+  typography: {
+    fontFamily: 'Quicksand',
+      footerHeading: {
+        fontSize: 30,
+        fontWeight: 700
+      }
+  }
+});
 
 function App() {
   return (
-    <>
-      <Header />
-      <Forside />
-    </>
+    <div className="App">
+      <ThemeProvider theme={theme}>
+        <Test />
+        <Footer />
+      </ThemeProvider>
+    </div>
   );
 }
 
