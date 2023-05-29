@@ -1,9 +1,12 @@
 import './App.css';
+import Header from './components/Header';
+import Forside from './pages/Forside';
 
 function App() {
   return (
     <>
-    <h1>Welcome to the Roskilde Boldklub app template!</h1>
+      <Header />
+      <Forside />
     </>
   );
 }
