@@ -52,7 +52,7 @@ export default function Header() {
               onClick={handleClick}
               onMouseOver={handleClick}
             >
-              Holdoversigts
+              Holdoversigt
             </Button>
             <Menu
               id="simple-menu"
