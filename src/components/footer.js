@@ -6,46 +6,32 @@ import Logo from '../images/RB-logo.svg'
 import Link from '@mui/material/Link';
 import {YouTube, Facebook} from '@mui/icons-material';
 
-
-
-
 export default function footer() {
     return(
         <>
-          <Box
-            sx={{
-              mt: 'auto'
-            }}>
-        <Box
-          component="footer"
-          height="200px"
-          sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'dark'
-                ? theme.palette.grey[200]
-                : theme.palette.grey[700],
-          }}
-        >
-          <Box sx={{color: 'whitesmoke', mx: 20}}>
 
-            <Grid container alignItems='center' justifyContent='center'>
-              <img src={Logo} alt='logo'/>
-              <Grid container direction='row' spacing={12}>
-                <Grid>
-                    <Typography variant='footerHeading'>Hvor kan du finde os?</Typography>
-                    <Typography>Roskilde Boldklub af 1906</Typography>
-                    <Typography>Rådmanshaven 10</Typography>
-                    <Typography>4000 Roskilde</Typography>
+          <Box sx={{mt: 'auto', color: 'whitesmoke', height: 200, backgroundColor: 'gray'}}>
+            <Grid container direction='row' justifyContent='space-evenly' mt='2rem'>
+              <Grid container>
+                <Grid item>
+                  <img src={Logo} alt='logo' width='60%'/>
                 </Grid>
+                <Grid item xs>
+                    <Typography variant='footerHeading'>Hvor kan du finde os?</Typography>
+                    <Typography >Roskilde Boldklub af 1906</Typography>
+                    <Typography >Rådmanshaven 10</Typography>
+                    <Typography >4000 Roskilde</Typography>
+                </Grid>
+              </Grid>
 
-                <Grid>
-                <Typography variant='footerHeading' >Kontakt</Typography>
-                  <Typography>Tlf.: 46 35 19 06</Typography>
+                <Grid item sm={2}>
+                  <Typography variant='footerHeading' >Kontakt</Typography>
+                  <Typography >Tlf.: 46 35 19 06</Typography>
                   <Typography>E-mail: rb1905@rb1906.dk</Typography>
                   <Typography>CVR nummer: 23490412</Typography>
                 </Grid>
 
-                <Grid>
+                <Grid item sm={2}>
                   <Typography variant='footerHeading'>Følg os</Typography>
                     <Typography>
                       <Link href="https://www.facebook.com/RB1906" color="inherit"><Facebook fontSize="large"/></Link>
@@ -53,10 +39,7 @@ export default function footer() {
                     </Typography>
                 </Grid>
               </Grid>
-            </Grid>
           </Box>
-        </Box>
-      </Box>
         </>
     );
 }
