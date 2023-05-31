@@ -1,11 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+/* import { makeStyles } from '@material-ui/core/styles'; */
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Hero from '../images/rb-hero.png'
 
-const useStyles = makeStyles((theme) => ({
+/* const useStyles = makeStyles((theme) => ({
   section: {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
@@ -16,13 +16,13 @@ const useStyles = makeStyles((theme) => ({
     }
   }
 
-}));
+})); */
 
 export default function Header(props) {
-  const classes = useStyles();
+  /* const classes = useStyles(); */
 
   return (
-    <section className={classes.section} style={{ backgroundImage: `url("${Hero}")` }}>
+    <section /* className={classes.section} */ style={{ backgroundImage: `url("${Hero}")` }}>
       <Container maxWidth="md">
         <Box>
           <Typography gutterBottom={true}>
