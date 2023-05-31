@@ -12,6 +12,8 @@ const RegisterForm = () => {
     const [email, setEmail] = useState('')
     const [dateOfBirth, setDateOfBirth] = useState('')
     const [password, setPassword] = useState('')
+    const [password2, setPassword2] = useState('')
+    const [city, setCity] = useState('')
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('')
 
@@ -23,8 +25,8 @@ const RegisterForm = () => {
     return (
         <React.Fragment>
             <Box boxShadow={3} mx={75}  my={5} height='auto'>
-            <Box sx={{ boxShadow: 3, backgroundColor: '#2669A4'}} >
-                <Typography color="secondary" variant="h4" mb={5}>Opret Bruger</Typography>
+            <Box sx={{ backgroundColor: '#2669A4', p: 1}} >
+                <Typography color="secondary" variant="h4">Opret Bruger</Typography>
             </Box>
             <Box padding={2}>
 
@@ -34,7 +36,7 @@ const RegisterForm = () => {
                         type="text"
                         variant='outlined'
                         color='secondary'
-                        label="First Name"
+                        label="Fornavn"
                         onChange={e => setFirstName(e.target.value)}
                         value={firstName}
                         fullWidth
@@ -44,7 +46,7 @@ const RegisterForm = () => {
                         type="text"
                         variant='outlined'
                         color='secondary'
-                        label="Last Name"
+                        label="Efternavn"
                         onChange={e => setLastName(e.target.value)}
                         value={lastName}
                         fullWidth
@@ -78,23 +80,36 @@ const RegisterForm = () => {
                     variant='outlined'
                     color='secondary'
                     label="Gentag Password"
-                    onChange={e => setPassword(e.target.value)}
-                    value={password}
+                    onChange={e => setPassword2(e.target.value)}
+                    value={password2}
                     required
                     fullWidth
                     sx={{mb: 4}}
                 />
-                <TextField
-                    type="text"
-                    variant='outlined'
-                    color='secondary'
-                    label="Addresse"
-                    onChange={e => setAddress(e.target.value)}
-                    value={address}
-                    required
-                    fullWidth
-                    sx={{mb: 4}}
-                />
+                <Stack spacing={2} direction="row">
+                    <TextField
+                        type="text"
+                        variant='outlined'
+                        color='secondary'
+                        label="By"
+                        onChange={e => setCity(e.target.value)}
+                        value={city}
+                        required
+                        fullWidth
+                        sx={{mb: 4}}
+                    />
+                    <TextField
+                        type="text"
+                        variant='outlined'
+                        color='secondary'
+                        label="Addresse"
+                        onChange={e => setAddress(e.target.value)}
+                        value={address}
+                        required
+                        fullWidth
+                        sx={{mb: 4}}
+                    />
+                </Stack>
                 <TextField
                     type="text"
                     variant='outlined'
@@ -110,7 +125,6 @@ const RegisterForm = () => {
                     type="date"
                     variant='outlined'
                     color='secondary'
-                    label="Fødselsdag"
                     onChange={e => setDateOfBirth(e.target.value)}
                     value={dateOfBirth}
                     fullWidth
