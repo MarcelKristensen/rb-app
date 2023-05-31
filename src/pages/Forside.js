@@ -1,5 +1,6 @@
 import { Box, Typography, Grid } from "@mui/material";
 import HeroBanner from '../components/hero'
+import SenesteNyheder from '../components/senesteNyheder'
 import Hero from '../images/rb-hero.png'
 import React from "react";
 
@@ -9,13 +10,7 @@ export default function Forside() {
      <HeroBanner header="Roskilde Boldklub" subtitle="af 1906" image={Hero}/>
 
       {/* Nyheder */}
-      <Box
-        sx={{
-          backgroundColor: 'whitesmoke',
-          height: '500px'
-        }}>
-        NYHEDER
-      </Box>
+      <SenesteNyheder></SenesteNyheder>
 
       {/* Social Medie */}
       <Box

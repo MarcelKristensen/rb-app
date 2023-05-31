@@ -15,7 +15,7 @@ const theme = createTheme({
     },
     secondary: {
       main: '#F3B820' //orange
-    },
+    }
   },
   typography: {
     fontFamily: 'Quicksand',
@@ -34,6 +34,21 @@ const theme = createTheme({
       imageSubText: {
         fontSize: 12,
         fontWeight: 400
+      },
+      latestNewsTitle: {
+        fontSize: 20,
+        fontWeight: 600,
+        color: '#FFFFFF'
+      },
+      latestNewsDate: {
+        fontSize: 10,
+        fontWeight: 600,
+        color: '#FFFFFF'
+      },
+      blueBtn: {
+        fontSize: 25,
+        fontWeight: 600,
+        color: '#FFFFFF'
       }
   }
 });
