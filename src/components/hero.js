@@ -2,12 +2,11 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Hero from '../images/rb-hero.png'
 
 export default function Header(props) {
   return (
   <Box sx={{
-    backgroundImage: `url("${Hero}")`
+    backgroundImage: `url("${props.image}")`
     }}>
       <Container maxWidth="md">
         <Box>
