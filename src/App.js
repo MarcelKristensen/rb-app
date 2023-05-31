@@ -6,7 +6,6 @@ import Forside from "./pages/Forside";
 import Registrering from "./pages/registrering";
 import Artikel from "./pages/artikel";
 import Test from "./pages/test";
-import Login from "./components/loginModal";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
