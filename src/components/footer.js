@@ -12,7 +12,7 @@ export default function footer() {
           <Box sx={{mt: 'auto', color: 'whitesmoke', height: 200, backgroundColor: 'gray'}}>
             <Grid container direction='row' justifyContent='space-evenly' mt='2rem'>
               <Grid container>
-                <Grid item>
+                <Grid item xs>
                   <img src={Logo} alt='logo' width='60%'/>
                 </Grid>
                 <Grid item xs>
