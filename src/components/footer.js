@@ -9,7 +9,6 @@ import {YouTube, Facebook} from '@mui/icons-material';
 export default function footer() {
     return(
         <>
-
           <Box sx={{mt: 'auto', color: 'whitesmoke', height: 200, backgroundColor: 'gray'}}>
             <Grid container direction='row' justifyContent='space-evenly' mt='2rem'>
               <Grid container>

@@ -1,24 +1,16 @@
 import { Box, Typography, Grid } from "@mui/material";
+import HeroBanner from '../components/hero'
 import React from "react";
 
 export default function Forside() {
   return (
     <>
-
-      {/* Hero banner */}
-      <Box
-        sx={{
-          backgroundColor: 'blueviolet',
-          height: '400px'
-        }}
-      >
-        HERO BANNER
-      </Box>
+     <HeroBanner header="Roskilde Boldklub" subtitle="af 1906"/>
 
       {/* Nyheder */}
       <Box
         sx={{
-          backgroundColor: 'yellow',
+          backgroundColor: 'whitesmoke',
           height: '500px'
         }}>
         NYHEDER
@@ -64,18 +56,18 @@ export default function Forside() {
 
           <Grid container spacing={2} columns={12}>
             <Grid xs={3}>
-              <a href="#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
+              <a href="/#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
             </Grid>
             <Grid xs={3}>
-              <a href="#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
+              <a href="/#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
 
             </Grid><Grid xs={3}>
-              <a href="#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
+              <a href="/#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
             </Grid>
             <Grid xs={3}>
-              <a href="#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
+              <a href="/#"><img src={require('../images/sponsorNike.png')} width={"250px"} alt='SponsorNike'></img></a>
             </Grid>
-            
+
           </Grid>
 
         </Box>

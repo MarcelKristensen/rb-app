@@ -1,8 +1,11 @@
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Footer from './components/footer';
+import Header from  './components/Header'
+import Forside from './pages/Forside'
+import Registrering from './pages/registrering'
 import Test from './pages/test';
-import Hero from './components/hero'
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -33,12 +36,18 @@ const theme = createTheme({
 function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <Hero header="Roskilde Boldklub" subtitle="af 1906"/>
-        <Test />
-        <Footer />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Forside />} />
+          <Route path="test" element={<Test />} />
+          <Route path="registrering" element={<Registrering />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </ThemeProvider>
+        </div>
   );
 }
 

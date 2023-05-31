@@ -30,23 +30,25 @@ export default function Header() {
           mx: '20%',
           alignItems: 'center'
         }}>
-          <span>Login</span> <img src={require('../icons/login.png')} alt='login'></img>
+          <a href="/registrering"><span>Login</span> <img src={require('../icons/login.png')} alt='login'></img></a>
         </Box>
       </Box>
+
       <Box sx={{
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        boxShadow: 3
       }}>
         <Box sx={{
           mx: '20%',
           display: 'flex',
           justifyContent: 'flex-start',
           alignItems: 'center',
-        }}>          
-          <img className="headerLogo" src={require('../images/RBLogo.png')} width={"100px"} alt='logo'></img>
+        }}>
+          <a href="/"><img className="headerLogo" src={require('../images/RBLogo.png')} width={"100px"} alt='logo'></img></a>
           <div>
             <Button>Om RB</Button>
-            <Button> Nyheder</Button>
+            <Button>Nyheder</Button>
             <Button>Medlemskab</Button>
             <Button
               onClick={handleClick}
