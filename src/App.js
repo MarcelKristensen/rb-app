@@ -41,7 +41,7 @@ const theme = createTheme({
         color: '#FFFFFF'
       },
       latestNewsDate: {
-        fontSize: 10,
+        fontSize: 13,
         fontWeight: 600,
         color: '#FFFFFF'
       },
