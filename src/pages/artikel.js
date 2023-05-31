@@ -2,23 +2,12 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import HeroBanner from '../components/hero';
 import { Grid } from '@mui/material';
+import Banner from '../images/artikel-banner.png'
 
 export default function artikel() {
   return (
     <>
-      <Box>
-        <HeroBanner header="Roskilde Boldklub" subtitle="af 1906" />
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}>
-          <Typography align='center' variant="imageSubText">Natalie Rømer startede som frivillig forældre-træner for knap fem år siden, og siden er pigefodbolden i Roskilde-klubben for alvor blomstret op.</Typography>
-        </Box>
-      </Box>
-
-
-
+      <HeroBanner header="Sommerland" subtitle="Børnepris" image={Banner}/>
 
       <Box
         sx={{
