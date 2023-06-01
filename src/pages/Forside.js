@@ -97,7 +97,6 @@ export default function Forside() {
             </Grid>
             <Grid xs={3}>
               <a href="/#"><img src={require('../images/sponsor-bauhaus.png')} width={"90%"} alt='Sponsor-bauhaus'></img></a>
-
             </Grid><Grid xs={3}>
               <a href="/#"><img src={require('../images/sponsor-fysio.png')} width={"90%"} alt='Sponsor-fysio'></img></a>
             </Grid>
@@ -109,7 +108,6 @@ export default function Forside() {
             </Grid>
             <Grid xs={3}>
               <a href="/#"><img src={require('../images/sponsor-puma.png')} width={"90%"} alt='Sponsor-puma'></img></a>
-
             </Grid><Grid xs={3}>
               <a href="/#"><img src={require('../images/sponsor-spar-nord.png')} width={"90%"} alt='Sponsor-spar-nord'></img></a>
             </Grid>
@@ -119,9 +117,6 @@ export default function Forside() {
           </Grid>
         </Box>
       </Box>
-
-
     </>
   )
 }
-
