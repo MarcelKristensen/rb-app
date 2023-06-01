@@ -11,10 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import { styled } from '@mui/material';
 
-const pages = ['Om RB', 'Nyheder', 'Medlemskab', 'Holdoversigt', 'Kampoversigt', 'Webshop'];
+const pages = ['Om RB', 'Nyheder', 'Medlemskab', 'Webshop', 'Kampoversigt'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const uHold = ['U7', 'U8', 'U9', 'U10', 'U11', 'U12', 'U13', 'U14', 'U15', 'U16', 'U17', 'U18'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,13 +36,47 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  function handleClick(event) {
+    if (anchorEl !== event.currentTarget) {
+      setAnchorEl(event.currentTarget);
+    }
+  }
+
+  function handleClose() {
+    setAnchorEl(null);
+  }
+
+  const MyMenuItem = styled(MenuItem)({
+    color: 'black',
+    display: 'block',
+    fontSize: 20,
+    fontWeight: 600,
+    textTransform: 'none',
+    "&:hover": {
+      backgroundColor: '#F3B820'
+    }
+  });
+
   return (
-    <AppBar position="static" sx={{backgroundColor: '#FFFFFF'}}>
+    <AppBar position="static" sx={{ backgroundColor: '#FFFFFF' }}>
+
+      <Container sx={{
+            backgroundColor: '#2669A4',
+            position: 'absolute',
+          }}>
+        <Toolbar>
+          <Box sx={{
+            backgroundColor: '#2669A4'
+          }}>
+          </Box>
+        </Toolbar>
+      </Container>
+
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          
           <a href="/"><img className="headerLogo" src={require('../images/RBLogo.png')} width={"100px"} alt='logo'></img></a>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -94,17 +129,16 @@ function ResponsiveAppBar() {
             }}
           >
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'space-evenly' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ 
-                  my: 2, 
-                  ml: 2,
-                  color: 'black', 
-                  display: 'block', 
-                  fontSize: 17,
+                sx={{
+                  my: 2,
+                  color: 'black',
+                  display: 'block',
+                  fontSize: 20,
                   fontWeight: 600,
                   textTransform: 'none'
                 }}
@@ -112,6 +146,48 @@ function ResponsiveAppBar() {
                 {page}
               </Button>
             ))}
+            {/* 
+            DROP DOWN MENU FOR U HOLD 
+            */}
+            <Button
+              onClick={handleClick}
+              onMouseOver={handleClick}
+              sx={{
+                my: 2,
+                color: 'black',
+                display: 'block',
+                fontSize: 20,
+                fontWeight: 600,
+                textTransform: 'none'
+              }}
+            >
+              Holdoversigt
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              MenuListProps={{ onMouseLeave: handleClose }}
+            >
+              {uHold.map((hold) => (
+                <MyMenuItem
+                  key={hold}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: 'black',
+                    display: 'block',
+                    fontSize: 20,
+                    fontWeight: 600,
+                    textTransform: 'none',
+                    minWidth: '120px'
+                  }}
+                >
+                  {hold}
+                </MyMenuItem>
+              ))}
+            </Menu>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
