@@ -130,7 +130,9 @@ export default function Header() {
                     </form>
                     <small>
                       Har du ikke en bruger?{" "}
-                      <Link to="/registrering">Opret her</Link>
+                      <Link onClick={handleClose} to="/registrering">
+                        Opret her
+                      </Link>
                     </small>
                   </Box>
                 </Box>
