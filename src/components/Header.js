@@ -1,17 +1,27 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import React, { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import { styled } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
+
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Menu,
+  Container,
+  Avatar,
+  Button,
+  Tooltip,
+  MenuItem,
+  styled,
+  Modal,
+  Stack,
+  Fade,
+  Backdrop,
+  TextField,
+} from "@mui/material";
 
 const pages = ["Om RB", "Nyheder", "Medlemskab", "Webshop", "Kampoversigt"];
 const settings = ["Profil", "Konto", "Logout"];
@@ -33,6 +43,11 @@ const uHold = [
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [open, setOpen] = React.useState(false);
+  const handleOpenModal = () => setOpen(true);
+  const handleCloseModal = () => setOpen(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -61,6 +76,11 @@ function ResponsiveAppBar() {
     setAnchorEl(null);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(email, password);
+  }
+
   const MyMenuItem = styled(MenuItem)({
     color: "black",
     display: "block",
@@ -71,6 +91,18 @@ function ResponsiveAppBar() {
       backgroundColor: "#F3B820",
     },
   });
+
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "1px solid #000",
+    boxShadow: 24,
+  };
+
   return (
     <>
       <AppBar
@@ -94,6 +126,112 @@ function ResponsiveAppBar() {
                 justifyContent: "right",
               }}
             >
+              <Box
+                sx={{
+                  display: "flex",
+                  bgcolor: "#2669A4",
+                  minHeight: "30px",
+                  justifyContent: "end",
+                  flexDirection: "row",
+                  color: "#FFFFFF",
+                }}
+              >
+                <Box
+                  sx={{
+                    mx: "20%",
+                    alignItems: "center",
+                  }}
+                >
+                  <div>
+                    <Button onClick={handleOpenModal}>
+                      Login{" "}
+                      <img
+                        src={require("../icons/login.png")}
+                        alt="login"
+                      ></img>
+                    </Button>
+                    <Modal
+                      aria-labelledby="transition-modal-title"
+                      aria-describedby="transition-modal-description"
+                      open={open}
+                      onClose={handleCloseModal}
+                      closeAfterTransition
+                      slots={{ backdrop: Backdrop }}
+                      slotProps={{
+                        backdrop: {
+                          timeout: 500,
+                        },
+                      }}
+                    >
+                      <Fade in={open}>
+                        <Box sx={style}>
+                          <Box
+                            sx={{
+                              backgroundColor: "#2669A4",
+                              p: 1,
+                            }}
+                          >
+                            <Stack
+                              direction="row"
+                              justifyContent="space-between"
+                            >
+                              <Typography color="secondary" variant="h4">
+                                Login
+                              </Typography>
+                              <IconButton onClick={handleCloseModal}>
+                                <CloseIcon color="secondary" />
+                              </IconButton>
+                            </Stack>
+                          </Box>
+                          <Box padding={2}>
+                            <form
+                              onSubmit={handleSubmit}
+                              action={<Link to="/" />}
+                            >
+                              <TextField
+                                type="email"
+                                variant="outlined"
+                                color="secondary"
+                                label="Email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                value={email}
+                                fullWidth
+                                sx={{ mb: 4 }}
+                              />
+                              <TextField
+                                type="password"
+                                variant="outlined"
+                                color="secondary"
+                                label="Adgangskode"
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
+                                fullWidth
+                                sx={{ mb: 4 }}
+                              />
+                              <Button
+                                variant="contained"
+                                color="secondary"
+                                type="submit"
+                              >
+                                Login
+                              </Button>
+                            </form>
+                            <small>
+                              Har du ikke en bruger?{" "}
+                              <Link
+                                onClick={handleCloseModal}
+                                to="/registrering"
+                              >
+                                Opret her
+                              </Link>
+                            </small>
+                          </Box>
+                        </Box>
+                      </Fade>
+                    </Modal>
+                  </div>
+                </Box>
+              </Box>
               <Tooltip title="Brugerinformation">
                 <IconButton
                   onClick={handleOpenUserMenu}

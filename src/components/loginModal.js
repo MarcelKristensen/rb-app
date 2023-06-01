@@ -20,7 +20,7 @@ const style = {
 
 export default function TransitionsModal() {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpenModal = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const [email, setEmail] = useState("");
@@ -62,7 +62,7 @@ export default function TransitionsModal() {
                   Login
                 </Typography>
                 <IconButton>
-                  <CloseIcon onClick={handleClose} color="secondary" />
+                  <CloseIcon onClick={handleOpenModal} color="secondary" />
                 </IconButton>
               </Stack>
             </Box>
