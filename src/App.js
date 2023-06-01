@@ -12,7 +12,7 @@ import {BrowserRouter, Routes, Route } from 'react-router-dom';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#DCDCDC' //lys grå
+      main: "#DCDCDC", //lys grå
     },
     secondary: {
       main: '#F3B820' //orange

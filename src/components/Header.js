@@ -1,3 +1,4 @@
+
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -37,12 +38,6 @@ function ResponsiveAppBar() {
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-  function handleClick(event) {
-    if (anchorEl !== event.currentTarget) {
-      setAnchorEl(event.currentTarget);
-    }
-  }
 
   function handleClose() {
     setAnchorEl(null);

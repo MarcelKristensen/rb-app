@@ -29,7 +29,6 @@ const RegisterForm = () => {
                 <Typography color="secondary" variant="h4">Opret Bruger</Typography>
             </Box>
             <Box padding={2}>
-
             <form onSubmit={handleSubmit} action={<Link to="/login" />}>
                 <Stack spacing={2} direction="row" sx={{marginBottom: 4}}>
                     <TextField
