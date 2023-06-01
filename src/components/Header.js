@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { styled } from '@mui/material';
 
 const pages = ['Om RB', 'Nyheder', 'Medlemskab', 'Webshop', 'Kampoversigt'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profil', 'Konto', 'Logout'];
 const uHold = ['U7', 'U8', 'U9', 'U10', 'U11', 'U12', 'U13', 'U14', 'U15', 'U16', 'U17', 'U18'];
 
 function ResponsiveAppBar() {
@@ -60,20 +60,62 @@ function ResponsiveAppBar() {
   });
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#FFFFFF' }}>
-
-      <Container sx={{
+    <>
+    <AppBar position="static" sx={{ backgroundColor: '#2669A4' }}>
+    <Container sx={{
             backgroundColor: '#2669A4',
-            position: 'absolute',
+            width:'100%',
+            height: '50px'
           }}>
-        <Toolbar>
-          <Box sx={{
-            backgroundColor: '#2669A4'
-          }}>
+        <Toolbar sx={{p: 0, m: 0}}>
+        <Box sx={{ 
+          display: 'flex', 
+          color: '#ffffff', 
+          alignItems: 'center', 
+          width:'100%',
+          justifyContent: 'right'
+        }}>                    
+            <Tooltip title="Brugerinformation">
+              <IconButton onClick={handleOpenUserMenu} 
+              sx={{ 
+                p: 0,
+                m: 0,
+                borderRadius: '0.5rem'
+              }}>
+              <Typography color="#ffffff">Login</Typography>
+                <Avatar src="../icons/login.png" 
+                sx={{ bgcolor: 'transparent' }}
+                  />
+              </IconButton>
+            </Tooltip>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
         </Toolbar>
       </Container>
+    </AppBar>
 
+    <AppBar position="static" sx={{ backgroundColor: '#FFFFFF' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <a href="/"><img className="headerLogo" src={require('../images/RBLogo.png')} width={"100px"} alt='logo'></img></a>
@@ -189,38 +231,10 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar src="../icons/login.png" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>
+    </>
   );
 }
 export default ResponsiveAppBar;
