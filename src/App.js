@@ -1,15 +1,13 @@
-
-import './App.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Footer from './components/footer';
-import Header from  './components/Header'
-import Forside from './pages/Forside';
-import Registrering from './pages/registrering';
-import Artikel from './pages/artikel';
-import OmRB from './pages/omRB';
-import Nyheder from './pages/nyheder';
-import Test from './pages/test';
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
+import "./App.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Footer from "./components/footer";
+import Header from "./components/Header";
+import Forside from "./pages/Forside";
+import Registrering from "./pages/registrering";
+import Artikel from "./pages/artikel";
+import OmRB from "./pages/omRB";
+import Nyheder from "./pages/nyheder";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -64,10 +62,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Forside />} />
-            <Route path="test" element={<Test />} />
             <Route path="registrering" element={<Registrering />} />
             <Route path="artikel" element={<Artikel />} />
-            <Route path="omRB" element={<OmRB />} />
+            <Route path="om-rb" element={<OmRB />} />
             <Route path="nyheder" element={<Nyheder />} />
           </Routes>
           <Footer />
