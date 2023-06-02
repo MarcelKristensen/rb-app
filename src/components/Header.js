@@ -15,6 +15,7 @@ import {
   Tooltip,
   MenuItem,
   styled,
+  Link,
 } from "@mui/material";
 
 const pages = ["Om RB", "Nyheder", "Medlemskab", "Webshop", "Kampoversigt"];
@@ -75,6 +76,16 @@ function ResponsiveAppBar() {
       backgroundColor: "#F3B820",
     },
   });
+
+  const NavItem = styled(Button)({
+    my: 2,
+    color: "black",
+    display: "block",
+    fontSize: 20,
+    fontWeight: 600,
+    textTransform: "none",
+  });
+
   return (
     <>
       <AppBar
@@ -195,7 +206,7 @@ function ResponsiveAppBar() {
               variant="h5"
               noWrap
               component="a"
-              href=""
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -217,22 +228,32 @@ function ResponsiveAppBar() {
                 },
               }}
             >
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "black",
-                    display: "block",
-                    fontSize: 20,
-                    fontWeight: 600,
-                    textTransform: "none",
-                  }}
-                >
-                  {page}
-                </Button>
-              ))}
+              <NavItem>
+                <Link underline="none" color="inherit" href="om-rb">
+                  Om RB
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link underline="none" color="inherit" href="nyheder">
+                  Nyheder
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link underline="none" color="inherit" href="#">
+                  Medlemskab
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link underline="none" color="inherit" href="#">
+                  Webshop
+                </Link>
+              </NavItem>
+              <NavItem>
+                <Link underline="none" color="inherit" href="#">
+                  Kampoversigt
+                </Link>
+              </NavItem>
+
               {/*
             DROP DOWN MENU FOR U HOLD
             */}
