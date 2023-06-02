@@ -119,9 +119,6 @@ export default function Forside() {
           </Grid>
         </Box>
       </Box>
-
-
     </>
   )
 }
-

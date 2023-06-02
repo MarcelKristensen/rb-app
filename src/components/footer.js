@@ -19,10 +19,11 @@ export default function footer() {
       >
         <Grid container direction="row" justifyContent="space-evenly" mt="2rem">
           <Grid container>
-            <Grid item xs>
+            <Grid>
               <img src={Logo} alt="logo" width="60%" />
             </Grid>
-            <Grid item xs>
+
+            <Grid>
               <Typography variant="footerHeading">
                 Hvor kan du finde os?
               </Typography>
@@ -32,14 +33,14 @@ export default function footer() {
             </Grid>
           </Grid>
 
-          <Grid item sm={2}>
+          <Grid>
             <Typography variant="footerHeading">Kontakt</Typography>
             <Typography>Tlf.: 46 35 19 06</Typography>
             <Typography>E-mail: rb1905@rb1906.dk</Typography>
             <Typography>CVR nummer: 23490412</Typography>
           </Grid>
 
-          <Grid item sm={2}>
+          <Grid>
             <Typography variant="footerHeading">Følg os</Typography>
             <Typography>
               <Link href="https://www.facebook.com/RB1906" color="inherit">
