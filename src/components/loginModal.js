@@ -3,6 +3,9 @@ import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
+import Stack from "@mui/material/Stack";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -18,9 +21,9 @@ const style = {
   boxShadow: 24,
 };
 
-export default function TransitionsModal() {
+export default function TransitionsModal(props) {
   const [open, setOpen] = React.useState(false);
-  const handleOpenModal = () => setOpen(true);
+  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   const [email, setEmail] = useState("");
@@ -33,9 +36,7 @@ export default function TransitionsModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}>
-        Login <img src={require("../icons/login.png")} alt="login"></img>
-      </Button>
+      <div onClick={handleOpen}>{props.text}</div>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -62,7 +63,7 @@ export default function TransitionsModal() {
                   Login
                 </Typography>
                 <IconButton>
-                  <CloseIcon onClick={handleOpenModal} color="secondary" />
+                  <CloseIcon onClick={handleClose} color="secondary" />
                 </IconButton>
               </Stack>
             </Box>
