@@ -14,17 +14,19 @@ export default function SenesteNyheder(props) {
             sx={{
               backgroundColor: '#ffffff', minHeight: '80px'
             }}>
-            <h1 component="div">
+            <h1 
+            component="div">
               {props.title}
             </h1>
-            <Typography>
-              {props.text}
-            </Typography>
+            
             <CardMedia
               component="img"
               image={props.image}
               alt={props.alt}
             />
+            <Typography mt="1%" fontSize={18}>
+              {props.text}
+            </Typography>
             <CardActions
               sx={{
                 backgroundColor: '#ffffff'
