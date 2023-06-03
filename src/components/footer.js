@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
-import Logo from "../images/RB-logo.svg";
+import Logo from "../images/logo/RB-logo2.svg";
 import Link from "@mui/material/Link";
 import { YouTube, Facebook } from "@mui/icons-material";
 
@@ -14,13 +14,13 @@ export default function footer() {
           mt: "auto",
           color: "whitesmoke",
           height: 200,
-          backgroundColor: "gray",
+          backgroundColor: "#2669A4",
         }}
       >
         <Grid container direction="row" justifyContent="space-evenly" mt="2rem">
           <Grid container>
-            <Grid>
-              <img src={Logo} alt="logo" width="60%" />
+            <Grid mr="1rem">
+              <img src={Logo} alt="logo" width="128px" height="128px" />
             </Grid>
 
             <Grid>
