@@ -1,12 +1,4 @@
-import {
-  Box,
-  Typography,
-  Grid,
-  Link,
-  styled,
-  Button,
-  Container,
-} from "@mui/material";
+import { Box, Typography, Grid, Link, styled, Button } from "@mui/material";
 import HeroBanner from "../components/hero";
 import SenesteNyheder from "../components/senesteNyheder";
 import Hero from "../images/banner/rb-hero.png";
@@ -109,7 +101,7 @@ export default function Forside() {
         >
           <h1>SPONSORERE OG PARTNERE</h1>
         </Box>
-        <Container sx={{ mx: "20%" }}>
+        <Box sx={{ mx: "20%" }}>
           <Grid
             container
             spacing={2}
@@ -190,7 +182,7 @@ export default function Forside() {
               </a>
             </Grid>
           </Grid>
-        </Container>
+        </Box>
       </Box>
     </>
   );
