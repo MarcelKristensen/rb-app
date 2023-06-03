@@ -4,7 +4,7 @@ import HeroBanner from '../components/hero';
 import { Grid } from '@mui/material';
 import Banner from '../images/om-rb.png'
 
-export default function artikel() {
+export default function omRB() {
   return (
     <>
       <HeroBanner header="Roskilde Boldklub" subtitle="Om klubben" image={Banner} />
