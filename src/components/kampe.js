@@ -7,10 +7,9 @@ import { Box, CardActionArea } from '@mui/material';
 
 export default function Kampe(props) {
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <>
+    <Card sx={{ maxWidth: 500, mb: '5%', minHeight: '300px'}}>
       <CardActionArea>
-
-
         <Box
           sx={{
             display: 'flex',
@@ -18,31 +17,27 @@ export default function Kampe(props) {
             alignItems: 'center'
           }}
         >
-          <CardMedia 
-          component="img" 
-          image={props.hold1}       
-          alt={props.alt}
-          sx={{width: '220px'}}
+          <CardMedia
+            component="img"
+            image={props.hold1}
+            alt={props.alt}
+            sx={{ width: '25%', ml: '5%', maxHeight: '25%'}}
           />
-          <Typography variant='h5'>VS</Typography>
-          <CardMedia 
-          component="img" 
-          image={props.hold2}       
-          alt={props.alt} 
-          sx={{width: '220px'}}
+          <Typography variant='h4'>{props.status}</Typography>
+          <CardMedia
+            component="img"
+            image={props.hold2}
+            alt={props.alt}
+            sx={{ width: '25%', mr: '5%', maxHeight: '25%'}}
           />
         </Box>
-
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
+          <Typography align='center'>{props.spillested}</Typography>
+          <Typography align='center'>{props.aldersGruppe}</Typography>
+          <Typography align='center'>{props.hold}</Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+    </>
   );
 }
