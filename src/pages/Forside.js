@@ -109,83 +109,92 @@ export default function Forside() {
           flexWrap="wrap"
           justifyContent="center"
         >
-          <OpslagCard
-            date="5 dage siden"
-            description="Igen i år afholder vi fodboldskole i uge 31. Hvis du skal sikre dig en plads så er det ved at være på tide. Så skynd dig ind for at være sikker på at få din dreng eller pige med "
-            image={cardOpslag1}
-            contentTitle="Bananer sidder fast i automaten"
-            contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
-            contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
-            contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
-            contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
-            contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
-            contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
-          />
-
-          <OpslagCard
-            date="11 Maj 2023"
-            description="U15 tager idag imod HBK i tredje turneringskamp. Kampen kan følges på Veo live."
-            image={cardOpslag2}
-            contentTitle="Bananer sidder fast i automaten"
-            contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
-            contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
-            contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
-            contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
-            contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
-            contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
-          />
-
-          <OpslagCard
-            date="14 Maj 2023"
-            description="Vi har fantastiske nyheder at dele! Vores venner hos Gobilist.dk har netop sponsoreret Keepers målmandshandsker til alle klubbens målmænd på U13 til U19, samt vores Herre og Dame senior! Vi vil gerne takke Gobilist.dk for deres generøse..."
-            image={cardOpslag3}
-            contentTitle="Bananer sidder fast i automaten"
-            contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
-            contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
-            contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
-            contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
-            contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
-            contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
-          />
-
-          <OpslagCard
-            date="28 April 2023 dage siden"
-            description="Kom til sjov og lærerig fodboldskole i uge 31. Læs mere her."
-            image={cardOpslag4}
-            contentTitle="Bananer sidder fast i automaten"
-            contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
-            contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
-            contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
-            contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
-            contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
-            contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
-          />
-
-          <OpslagCard
-            date="9 Febuar 2023"
-            description="Roskilde boldklub er stole af at annoncere et strategisk samarbejde med F.C. København Samarbejdet mellem klubberne vil have stort fokus på børne- og ungdomsfodbolden i Roskilde og have en klar ambition om at udvikle klubben som helhed..."
-            image={cardOpslag5}
-            contentTitle="Bananer sidder fast i automaten"
-            contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
-            contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
-            contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
-            contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
-            contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
-            contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
-          />
-
-          <OpslagCard
-            date="1 Febuar 2023"
-            description="U15 er taget et smut til Helsingør. Kampstart kl. 12.30 "
-            image={""}
-            contentTitle="Bananer sidder fast i automaten"
-            contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
-            contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
-            contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
-            contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
-            contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
-            contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
-          />
+          <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Grid>
+              <OpslagCard
+                date="5 dage siden"
+                description="Igen i år afholder vi fodboldskole i uge 31. Hvis du skal sikre dig en plads så er det ved at være på tide. Så skynd dig ind for at være sikker på at få din dreng eller pige med "
+                image={cardOpslag1}
+                contentTitle="Bananer sidder fast i automaten"
+                contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
+                contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
+                contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
+                contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
+                contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
+                contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
+              />
+            </Grid>
+            <Grid >
+              <OpslagCard
+                date="11 Maj 2023"
+                description="U15 tager idag imod HBK i tredje turneringskamp. Kampen kan følges på Veo live."
+                image={cardOpslag2}
+                contentTitle="Bananer sidder fast i automaten"
+                contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
+                contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
+                contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
+                contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
+                contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
+                contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
+              />
+            </Grid>
+            <Grid>
+              <OpslagCard
+                date="14 Maj 2023"
+                description="Vi har fantastiske nyheder at dele! Vores venner hos Gobilist.dk har netop sponsoreret Keepers målmandshandsker til alle klubbens målmænd på U13 til U19, samt vores Herre og Dame senior! Vi vil gerne takke Gobilist.dk for deres generøse..."
+                image={cardOpslag3}
+                contentTitle="Bananer sidder fast i automaten"
+                contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
+                contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
+                contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
+                contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
+                contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
+                contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
+              />
+            </Grid>
+            <Grid>
+              <OpslagCard
+                date="28 April 2023 dage siden"
+                description="Kom til sjov og lærerig fodboldskole i uge 31. Læs mere her."
+                image={cardOpslag4}
+                contentTitle="Bananer sidder fast i automaten"
+                contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
+                contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
+                contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
+                contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
+                contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
+                contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
+              />
+            </Grid>
+            <Grid>
+              <OpslagCard
+                date="9 Febuar 2023"
+                description="Roskilde boldklub er stole af at annoncere et strategisk samarbejde med F.C. København Samarbejdet mellem klubberne vil have stort fokus på børne- og ungdomsfodbolden i Roskilde og have en klar ambition om at udvikle klubben som helhed..."
+                image={cardOpslag5}
+                contentTitle="Bananer sidder fast i automaten"
+                contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
+                contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
+                contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
+                contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
+                contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
+                contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
+              />
+            </Grid>
+            <Grid>
+              <OpslagCard
+                date="1 Febuar 2023"
+                description="U15 er taget et smut til Helsingør. Kampstart kl. 12.30 "
+                image={""}
+                contentTitle="Bananer sidder fast i automaten"
+                contentText1="1. Pisk æg, sukker og vaniljesukker til en luftig æggesnaps."
+                contentText2="2. land mel og bagepulver og vend det forsigtigt i dejen skiftevis med smørret. Vend de mosede bananer i."
+                contentText3="3. Hæld dejen i en smurt franskbrødsform (ca. 1 liter) og bag kagen nederst i ovnen."
+                contentText4="4. Vend banankagen ud på en bagerist og lad den køle af."
+                contentText5="5. Tag kagen ud af formen og placer den, med undersiden opad, på et fad."
+                contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
+              />
+            </Grid>
+          </Grid>
         </Stack>
       </Box>
 

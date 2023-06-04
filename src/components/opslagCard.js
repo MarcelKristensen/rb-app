@@ -40,7 +40,7 @@ export default function RecipeReviewCard(props) {
     <Card
       sx={{
         maxWidth: 350,
-        mb: "3%",
+        mb: "10%",
         boxShadow: 10,
         display: "flex",
         flexDirection: "column",
@@ -78,7 +78,6 @@ export default function RecipeReviewCard(props) {
           </Typography>
         </CardContent>
       </Box>
-
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <h3>{props.contentTitle}</h3>
