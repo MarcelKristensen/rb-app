@@ -46,7 +46,7 @@ const rows = [
   createData('U12', '600kr', '600kr', '600kr', '600kr'),
   createData('U9', '300kr', '300kr', '300kr', '300kr')
 ];
-
+ 
 export default function CustomizedTables() {
   return (
     <>
