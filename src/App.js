@@ -8,6 +8,7 @@ import Artikel from "./pages/artikel";
 import OmRB from "./pages/omRB";
 import Nyheder from "./pages/nyheder";
 import Medlemskab from "./pages/medlemskab";
+import KampOversigt from "./pages/kampoversigt";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
@@ -68,6 +69,7 @@ function App() {
             <Route path="om-rb" element={<OmRB />} />
             <Route path="nyheder" element={<Nyheder />} />
             <Route path="medlemskab" element={<Medlemskab />} />
+            <Route path="kampoversigt" element={<KampOversigt />} />
           </Routes>
           <Footer />
         </BrowserRouter>
