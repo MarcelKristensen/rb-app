@@ -111,7 +111,10 @@ function ResponsiveAppBar() {
             >
               <Button>
                 <LoginModal text="Login" />
-                <img src={require("../icons/login.png")} alt="login"></img>
+                <img
+                  src={require("../images/logo/login.png")}
+                  alt="login"
+                ></img>
               </Button>
               <Tooltip title="Brugerinformation">
                 <IconButton
@@ -162,8 +165,8 @@ function ResponsiveAppBar() {
             <a href="/">
               <img
                 className="headerLogo"
-                src={require("../images/RBLogo.png")}
-                width={"100px"}
+                src={require("../images/logo/RBLogo.png")}
+                width={"128px"}
                 alt="logo"
               ></img>
             </a>
