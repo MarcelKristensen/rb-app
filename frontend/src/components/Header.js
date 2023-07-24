@@ -139,13 +139,13 @@ function ResponsiveAppBar() {
       </AppBar>
 
       <AppBar position="static" sx={{ backgroundColor: "#FFFFFF" }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Toolbar disableGutters>
             <a href="/">
               <img
                 className="headerLogo"
                 src={require("../images/logo/RBLogo.png")}
-                width={"128px"}
+                width={"100px"}
                 alt="logo"
               ></img>
             </a>
