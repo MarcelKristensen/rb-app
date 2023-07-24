@@ -10,9 +10,7 @@ import {
   Typography,
   Menu,
   Container,
-  Avatar,
   Button,
-  Tooltip,
   MenuItem,
   styled,
   Link,
@@ -42,10 +40,6 @@ function ResponsiveAppBar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
@@ -116,22 +110,7 @@ function ResponsiveAppBar() {
                   alt="login"
                 ></img>
               </Button>
-              <Tooltip title="Brugerinformation">
-                <IconButton
-                  onClick={handleOpenUserMenu}
-                  sx={{
-                    p: 0,
-                    m: 0,
-                    borderRadius: "0.5rem",
-                  }}
-                >
-                  <Typography color="#ffffff">Login</Typography>
-                  <Avatar
-                    src="../icons/login.png"
-                    sx={{ bgcolor: "transparent" }}
-                  />
-                </IconButton>
-              </Tooltip>
+
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"

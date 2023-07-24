@@ -9,14 +9,8 @@ import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Avatar, Box, Stack } from "@mui/material";
-import {
-  CommentSharp,
-  ReplyAllSharp,
-  ReplySharp,
-  ShareSharp,
-  ThumbUpSharp,
-} from "@mui/icons-material";
+import { Avatar, Box } from "@mui/material";
+import { CommentSharp, ReplySharp, ThumbUpSharp } from "@mui/icons-material";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -57,7 +51,7 @@ export default function RecipeReviewCard(props) {
       >
         <CardHeader
           avatar={
-            <Avatar alt="RB Logo" src={require("../images/RBLogo.png")} />
+            <Avatar alt="RB Logo" src={require("../images/logo/RBLogo.png")} />
           }
           title="RB 1906"
           subheader={props.date}

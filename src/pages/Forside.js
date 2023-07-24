@@ -6,23 +6,21 @@ import {
   styled,
   Button,
   Stack,
-  Item,
 } from "@mui/material";
 import HeroBanner from "../components/hero";
 import SenesteNyheder from "../components/senesteNyheder";
 import OpslagCard from "../components/opslagCard";
-import Hero from "../images/rb-hero.png";
+import Hero from "../images/banner/rb-hero.png";
 import React from "react";
-import Nyhed1 from "../images/nyhed-1.png";
-import Nyhed2 from "../images/nyhed-2.png";
-import Nyhed3 from "../images/nyhed-3.png";
-import Nyhed4 from "../images/nyhed-4.png";
+import Nyhed1 from "../images/nyhed/nyhed-1.png";
+import Nyhed2 from "../images/nyhed/nyhed-2.png";
+import Nyhed3 from "../images/nyhed/nyhed-3.png";
+import Nyhed4 from "../images/nyhed/nyhed-4.png";
 import cardOpslag1 from "../images/cardOpslag-1.png";
 import cardOpslag2 from "../images/cardOpslag-2.png";
 import cardOpslag3 from "../images/cardOpslag-3.png";
 import cardOpslag4 from "../images/cardOpslag-4.png";
 import cardOpslag5 from "../images/cardOpslag-5.png";
-
 
 // Button er herfra: https://mui.com/system/styles/basics/#:~:text=to%20start%20editing-,Styled%20components%20API,-Note%3A%20this%20only
 const MyButton = styled(Button)({
@@ -110,7 +108,10 @@ export default function Forside() {
           flexWrap="wrap"
           justifyContent="center"
         >
-          <Grid container sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Grid
+            container
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
             <Grid>
               <OpslagCard
                 date="5 dage siden"
@@ -125,7 +126,7 @@ export default function Forside() {
                 contentText6="6. Fordel den smeltede chokolade på kagen, pynt med evt. med valnødder og server."
               />
             </Grid>
-            <Grid >
+            <Grid>
               <OpslagCard
                 date="11 Maj 2023"
                 description="U15 tager idag imod HBK i tredje turneringskamp. Kampen kan følges på Veo live."
@@ -230,7 +231,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/nikePNG.png")}
                   width={"80%"}
                   alt="Sponsor-nike"
@@ -240,7 +240,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/sponsor-bauhaus.png")}
                   width={"80%"}
                   alt="Sponsor-bauhaus"
@@ -250,7 +249,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/fysio.png")}
                   width={"80%"}
                   alt="Sponsor-fysio"
@@ -260,7 +258,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/sponsor-home.png")}
                   width={"80%"}
                   alt="Sponsor-home"
@@ -270,7 +267,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/sponsor-ok.png")}
                   width={"80%"}
                   alt="Sponsor-ok"
@@ -280,7 +276,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/sponsor-puma.png")}
                   width={"80%"}
                   alt="Sponsor-puma"
@@ -290,7 +285,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/sponsor-spar-nord.png")}
                   width={"80%"}
                   alt="Sponsor-spar-nord"
@@ -300,7 +294,6 @@ export default function Forside() {
             <Grid item xs={3}>
               <a href="/#">
                 <img
-
                   src={require("../images/sponsor/sponsor-sport24.png")}
                   width={"80%"}
                   alt="Sponsor-home"
