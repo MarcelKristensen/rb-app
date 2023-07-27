@@ -14,6 +14,7 @@ import {
   MenuItem,
   styled,
   Link,
+  Alert,
 } from "@mui/material";
 
 const pages = ["Om RB", "Nyheder", "Medlemskab", "Webshop", "Kampoversigt"];
@@ -221,17 +222,17 @@ function ResponsiveAppBar() {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="#">
+                <Link underline="none" color="inherit" href="medlemskab">
                   Medlemskab
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="#">
+                <Link underline="none" color="inherit" href="https://roskildeboldklub.sport24team.dk/">
                   Webshop
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="#">
+                <Link underline="none" color="inherit" href="kampoversigt">
                   Kampoversigt
                 </Link>
               </NavItem>

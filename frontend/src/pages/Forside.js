@@ -52,30 +52,38 @@ export default function Forside() {
           mx: "20%",
         }}
       >
-        <SenesteNyheder
-          image={Nyhed1}
-          title="Doner din gamle fodbold uanset stand"
-          date="22. Maj 2023"
-          alt="Nyhed 1"
-        ></SenesteNyheder>
-        <SenesteNyheder
-          image={Nyhed2}
-          title="Ny kunsgræs på banen er spilleklar næste uge"
-          date="12. Maj 2023"
-          alt="Nyhed 2"
-        ></SenesteNyheder>
-        <SenesteNyheder
-          image={Nyhed3}
-          title="Elitehold giver ikke op på hjemmebanen!"
-          date="6. Maj 2023"
-          alt="Nyhed 3"
-        ></SenesteNyheder>
-        <SenesteNyheder
-          image={Nyhed4}
-          title="U9 drenge vinder over Svinninge"
-          date="5. Maj 2023"
-          alt="Nyhed 4"
-        ></SenesteNyheder>
+        <Link underline="none" color="inherit" href="artikel">
+          <SenesteNyheder
+            image={Nyhed1}
+            title="Doner din gamle fodbold uanset stand"
+            date="22. Maj 2023"
+            alt="Nyhed 1"
+          ></SenesteNyheder>
+        </Link>
+        <Link underline="none" color="inherit" href="artikel">
+          <SenesteNyheder
+            image={Nyhed2}
+            title="Ny kunsgræs på banen er spilleklar næste uge"
+            date="12. Maj 2023"
+            alt="Nyhed 2"
+          ></SenesteNyheder>
+        </Link>
+        <Link underline="none" color="inherit" href="artikel">
+          <SenesteNyheder
+            image={Nyhed3}
+            title="Elitehold giver ikke op på hjemmebanen!"
+            date="6. Maj 2023"
+            alt="Nyhed 3"
+          ></SenesteNyheder>
+        </Link>
+        <Link underline="none" color="inherit" href="artikel">
+          <SenesteNyheder
+            image={Nyhed4}
+            title="U9 drenge vinder over Svinninge"
+            date="5. Maj 2023"
+            alt="Nyhed 4"
+          ></SenesteNyheder>
+        </Link>
       </Box>
       <Box
         sx={{
