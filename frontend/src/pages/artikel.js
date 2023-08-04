@@ -1,14 +1,10 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import HeroBanner from "../components/hero";
 import { Grid } from "@mui/material";
-import Banner from "../images/banner/artikel-banner.png";
 
 export default function artikel() {
   return (
     <>
-      <HeroBanner header="Sommerland" subtitle="Børnepris" image={Banner} />
-
       <Box
         sx={{
           mx: "20%",
