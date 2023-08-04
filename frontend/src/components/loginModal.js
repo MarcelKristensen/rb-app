@@ -62,8 +62,8 @@ export default function TransitionsModal(props) {
                 <Typography color="secondary" variant="h4">
                   Login
                 </Typography>
-                <IconButton>
-                  <CloseIcon onClick={handleClose} color="secondary" />
+                <IconButton onClick={handleClose}>
+                  <CloseIcon color="secondary" />
                 </IconButton>
               </Stack>
             </Box>
