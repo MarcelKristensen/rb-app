@@ -220,7 +220,7 @@ function ResponsiveAppBar() {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="#">
+                <Link underline="none" color="inherit" href="/medlemskab">
                   Medlemskab
                 </Link>
               </NavItem>
@@ -230,7 +230,7 @@ function ResponsiveAppBar() {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="#">
+                <Link underline="none" color="inherit" href="/kampoversigt">
                   Kampoversigt
                 </Link>
               </NavItem>
