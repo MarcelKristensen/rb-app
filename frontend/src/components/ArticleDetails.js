@@ -41,6 +41,11 @@ const ArticleDetails = ({ article }) => {
               {article.title}
             </Link>
           </Typography>
+          <Typography>
+            <Link href="/" underline="hover" color="inherit">
+              {article.text}
+            </Link>
+          </Typography>
         </CardContent>
       </Box>
     </Card>

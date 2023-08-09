@@ -12,6 +12,7 @@ const Nyheder = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const page = parseInt(query.get("page") || "1", 10);
+
   const { articles, dispatch } = useArticlesContext();
   useEffect(() => {
     const fetchArticles = async () => {
@@ -38,11 +39,6 @@ const Nyheder = () => {
             articles.map((article) => (
               <ArticleDetails key={article._id} article={article} />
             ))}
-          {/*
-            Pagination er brugt
-            Den her> https://mui.com/material-ui/react-pagination/#:~:text=Router%20integration,5
-            Der er mere nede i bunden efter return()
-          */}
           <Box
             sx={{
               display: "flex",
