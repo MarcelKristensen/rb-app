@@ -5,20 +5,33 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import LoginModal from "../components/loginModal";
 
+import { useSignup } from "../hooks/useSignup";
+
 const RegisterForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [dateOfBirth, setDateOfBirth] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  //const [dateOfBirth, setDateOfBirth] = useState("");  
 
+  const {signup, error, isLoading} = useSignup();
+
+  /*
   function handleSubmit(event) {
     event.preventDefault();
     console.log(firstName, lastName, email, dateOfBirth, password);
+  }
+  */
+
+  const handleSubmit = async (e) => {
+    //console.log(firstName, lastName, email, password, city, address, phone, /*dateOfBirth*/)
+    e.preventDefault()
+
+    await signup(firstName, lastName, email, password, city, address, phone, /*dateOfBirth*/)
   }
 
   return (
@@ -121,7 +134,7 @@ const RegisterForm = () => {
               fullWidth
               sx={{ mb: 4 }}
             />
-            <TextField
+            {/* <TextField
               type="date"
               variant="outlined"
               color="secondary"
@@ -130,8 +143,9 @@ const RegisterForm = () => {
               fullWidth
               required
               sx={{ mb: 4 }}
-            />
+            /> */}
             <Button
+              disabled={isLoading}
               variant="contained"
               color="secondary"
               type="submit"
@@ -139,6 +153,7 @@ const RegisterForm = () => {
             >
               Opret
             </Button>
+            {error && <h4>{error}</h4>}
           </form>
           <small>
             <Link>
