@@ -8,15 +8,26 @@ import { Link } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 
+/*import { useAuthContext } from '../hooks/useAuthContext.js'*/
+
 const Nyheder = () => {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const page = parseInt(query.get("page") || "1", 10);
 
   const { articles, dispatch } = useArticlesContext();
+
+  /*const {user} = useAuthContext()*/
+
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await fetch("/api/articles");
+      const response = await fetch("/api/articles"
+      /*,{
+        headers: {
+          'Authorization': `Bearer ${user.token}`
+        }
+      }*/
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -24,8 +35,10 @@ const Nyheder = () => {
       }
     };
 
-    fetchArticles();
-  }, []);
+    /*if (user){*/
+      fetchArticles();
+    /*}*/
+  }, [/*user*/]);
 
   return (
     <Box

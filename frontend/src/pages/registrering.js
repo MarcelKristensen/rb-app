@@ -20,15 +20,7 @@ const RegisterForm = () => {
 
   const {signup, error, isLoading} = useSignup();
 
-  /*
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(firstName, lastName, email, dateOfBirth, password);
-  }
-  */
-
   const handleSubmit = async (e) => {
-    //console.log(firstName, lastName, email, password, city, address, phone, /*dateOfBirth*/)
     e.preventDefault()
 
     await signup(firstName, lastName, email, password, city, address, phone, /*dateOfBirth*/)
