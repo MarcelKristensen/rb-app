@@ -10,6 +10,8 @@ import Typography from "@mui/material/Typography";
 import { TextField, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
+import { useLogin } from "../hooks/useLogin";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -29,10 +31,12 @@ export default function TransitionsModal(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
+  const {login, error, isLoading} = useLogin()
+    
+  const handleSubmit = async (event) => {    
     event.preventDefault();
-    console.log(email, password);
-  }
+    await login(email, password); 
+  }   
 
   return (
     <div>
@@ -89,9 +93,14 @@ export default function TransitionsModal(props) {
                   fullWidth
                   sx={{ mb: 4 }}
                 />
-                <Button variant="contained" color="secondary" type="submit">
+                <Button 
+                disabled={isLoading}
+                variant="contained" 
+                color="secondary" 
+                type="submit">
                   Login
                 </Button>
+                {error && <h4>{error}</h4>}
               </form>
               <small>
                 Har du ikke en bruger?{" "}

@@ -2,9 +2,14 @@ import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
 
 export const useSignup = () => {
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(null);
-  const { dispatch } = useAuthContext();
+
+  const [error, setError] = useState(null)
+  const [isLoading, setIsLoading] = useState(null)
+  const { dispatch } = useAuthContext()
+  
+  const signup = async (firstName, lastName, email, password, city, address, phone, /*dateOfBirth*/) => {
+    setIsLoading(true)
+    setError(null)
 
   const signup = async (
     firstName,

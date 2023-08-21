@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
+import { useAuthContext } from "../hooks/useAuthContext.js";
+import Stack from '@mui/material/Stack';
+import { Typography, Box, TextField, Button } from "@mui/material";
 
 const ArticleForm = () => {
   const { dispatch } = useArticlesContext();
@@ -8,8 +11,15 @@ const ArticleForm = () => {
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyfields] = useState([]);
 
+  const { user } = useAuthContext()
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(!user){
+      setError('Kræver du er logget ind for at oprette')
+      return
+    }
 
     const article = { title, text };
 
@@ -18,6 +28,7 @@ const ArticleForm = () => {
       body: JSON.stringify(article),
       headers: {
         "Content-Type": "application/json",
+        'Authorization': `Bearer ${user.token}`
       },
     });
     const json = await response.json();
@@ -36,30 +47,42 @@ const ArticleForm = () => {
     }
   };
 
-  return (
-    <form className="create" onSubmit={handleSubmit}>
-      <h3>Tilføj ny artikel</h3>
-
-      <label>Titel:</label>
-      <input
-        type="text"
-        onChange={(e) => setTitle(e.target.value)}
-        value={title}
-        className={emptyFields.includes("title") ? "error" : ""}
-      />
-
-      <label>Tekst:</label>
-      <input
-        type="text"
-        onChange={(e) => setText(e.target.value)}
-        value={text}
-        className={emptyFields.includes("text") ? "error" : ""}
-      />
-
-      <button>Tilføj artikel</button>
-      {error && <div className="error">{error}</div>}
-    </form>
-  );
+  return (  
+    <>
+    {user && (
+      <form className="create" onSubmit={handleSubmit}>                
+        <Stack spacing={1} sx={{mt: "10%"}}>          
+          <Typography variant="h5">Tilføj ny artikel</Typography>
+          <Box>
+            <TextField
+              label="Titel"
+              type="text"
+              onChange={(e) => setTitle(e.target.value)}
+              value={title}
+              className={emptyFields.includes("title") ? "error" : ""}
+            />
+          </Box>
+          <Box>
+            <TextField       
+              label="Tekst"       
+              type="text"
+              onChange={(e) => setText(e.target.value)}
+              value={text}
+              className={emptyFields.includes("text") ? "error" : ""}
+            />
+          </Box>
+          <Box>
+            <Button 
+              variant="contained"
+              color="secondary"
+              >Tilføj artikel</Button>
+            {error && <div className="error">{error}</div>}
+          </Box>
+        </Stack>
+      </form>
+    )}
+    </>
+  ); 
 };
 
 export default ArticleForm;
