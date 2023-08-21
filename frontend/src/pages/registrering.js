@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import LoginModal from "../components/loginModal";
-
 import { useSignup } from "../hooks/useSignup";
 
 const RegisterForm = () => {
@@ -16,15 +15,14 @@ const RegisterForm = () => {
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  //const [dateOfBirth, setDateOfBirth] = useState("");  
 
-  const {signup, error, isLoading} = useSignup();
-
+  const { signup, error, isLoading } = useSignup();
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    await signup(firstName, lastName, email, password, city, address, phone, /*dateOfBirth*/)
-  }
+
+    await signup(firstName, lastName, email, password, city, address, phone);
+  };
 
   return (
     <React.Fragment>
@@ -126,16 +124,6 @@ const RegisterForm = () => {
               fullWidth
               sx={{ mb: 4 }}
             />
-            {/* <TextField
-              type="date"
-              variant="outlined"
-              color="secondary"
-              onChange={(e) => setDateOfBirth(e.target.value)}
-              value={dateOfBirth}
-              fullWidth
-              required
-              sx={{ mb: 4 }}
-            /> */}
             <Button
               disabled={isLoading}
               variant="contained"

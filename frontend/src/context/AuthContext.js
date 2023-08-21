@@ -1,22 +1,24 @@
+
 import { createContext, useReducer, useEffect } from 'react'
 
-export const AuthContext = createContext()
+
+export const AuthContext = createContext();
 
 export const authReducer = (state, action) => {
   switch (action.type) {
-    case 'LOGIN':
-      return { user: action.payload }
-    case 'LOGOUT':
-      return { user: null }
+    case "LOGIN":
+      return { user: action.payload };
+    case "LOGOUT":
+      return { user: null };
     default:
-      return state
+      return state;
   }
-}
+};
 
 export const AuthContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(authReducer, { 
-    user: null
-  })
+  const [state, dispatch] = useReducer(authReducer, {
+    user: null,
+  });
 
   // tjekker om der er en bruger i storage ved opstart
   useEffect(() => {
@@ -31,8 +33,7 @@ export const AuthContextProvider = ({ children }) => {
   
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
-      { children }
+      {children}
     </AuthContext.Provider>
-  )
-
-}
+  );
+};
