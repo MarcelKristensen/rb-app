@@ -7,11 +7,25 @@ import { Box, Link } from "@mui/material";
 import { useArticlesContext } from "../hooks/useArticlesContext";
 import Nyhed1 from "../images/nyhed/nyhed-1.png";
 
+import { useAuthContext } from "../hooks/useAuthContext.js";
+
+
 const ArticleDetails = ({ article }) => {
   const { dispatch } = useArticlesContext();
+<<<<<<< HEAD
+=======
+  const { user } = useAuthContext()
+
+>>>>>>> 7681ce7844c443c0d096ce472a080267e34b9cf1
   const handleClick = async () => {
+    if(!user){
+      return
+    }
     const response = await fetch("/api/articles/" + article._id, {
       method: "DELETE",
+      headers: {
+        'Authorization': `Bearer ${user.token}`
+      }
     });
     const json = await response.json();
 

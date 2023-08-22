@@ -20,6 +20,7 @@ const RegisterForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     await signup(firstName, lastName, email, password, city, address, phone);
   };
 

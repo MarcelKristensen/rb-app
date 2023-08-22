@@ -1,6 +1,8 @@
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import LoginModal from "./loginModal";
+import { useLogout } from "../hooks/useLogout";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 import {
   AppBar,
@@ -34,6 +36,15 @@ const uHold = [
 ];
 
 function ResponsiveAppBar() {
+
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
+
+  const handleLogout = () => {
+    logout()
+    window.location.reload(false);
+  }
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -102,7 +113,8 @@ function ResponsiveAppBar() {
                 width: "100%",
                 justifyContent: "right",
               }}
-            >
+            >         
+            {!user && (     
               <Button>
                 <LoginModal text="Login" />
                 <img
@@ -110,7 +122,13 @@ function ResponsiveAppBar() {
                   alt="login"
                 ></img>
               </Button>
-
+            )}
+            {user && (
+              <Button onClick={handleLogout}>
+                <Typography sx={{mr: "7%"}}>{user.email}</Typography>
+                <Typography>Logout</Typography>
+              </Button>
+            )}
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
@@ -225,7 +243,7 @@ function ResponsiveAppBar() {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="#">
+                <Link underline="none" color="inherit" href="https://roskildeboldklub.sport24team.dk/">
                   Webshop
                 </Link>
               </NavItem>
