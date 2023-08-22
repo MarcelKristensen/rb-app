@@ -11,6 +11,12 @@ import { ReplySharp, ThumbUpSharp } from "@mui/icons-material";
 import cardOpslag1 from "../images/opslag/cardOpslag-1.png";
 
 const PostDetails = ({ post }) => {
+  const savedTime = post.createdAt;
+  const formattedDate = new Date(savedTime).toLocaleString("da-DK", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  });
   return (
     <Card
       sx={{
@@ -26,7 +32,7 @@ const PostDetails = ({ post }) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "start"
+          alignItems: "start",
         }}
       >
         <CardHeader
@@ -34,7 +40,7 @@ const PostDetails = ({ post }) => {
             <Avatar alt="RB Logo" src={require("../images/logo/RBLogo.png")} />
           }
           title="RB 1906"
-          subheader={post.createdAt}
+          subheader={formattedDate}
         ></CardHeader>
         <CardContent
           sx={{
