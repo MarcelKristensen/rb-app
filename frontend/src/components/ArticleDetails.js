@@ -3,29 +3,25 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, Link } from "@mui/material";
+import { Box, Link, Button, CardActions } from "@mui/material";
 import { useArticlesContext } from "../hooks/useArticlesContext";
 import Nyhed1 from "../images/nyhed/nyhed-1.png";
 
 import { useAuthContext } from "../hooks/useAuthContext.js";
 
-
 const ArticleDetails = ({ article }) => {
   const { dispatch } = useArticlesContext();
-<<<<<<< HEAD
-=======
-  const { user } = useAuthContext()
+  const { user } = useAuthContext();
 
->>>>>>> 7681ce7844c443c0d096ce472a080267e34b9cf1
   const handleClick = async () => {
-    if(!user){
-      return
+    if (!user) {
+      return;
     }
     const response = await fetch("/api/articles/" + article._id, {
       method: "DELETE",
       headers: {
-        'Authorization': `Bearer ${user.token}`
-      }
+        Authorization: `Bearer ${user.token}`,
+      },
     });
     const json = await response.json();
 
@@ -37,7 +33,7 @@ const ArticleDetails = ({ article }) => {
   return (
     <Card sx={{ maxWidth: 600, my: "5%", display: "flex" }}>
       <CardMedia
-        sx={{ width: 225, alignItems: "center" }}
+        sx={{ width: 225, height: 180, alignItems: "center" }}
         component="img"
         image={Nyhed1}
         alt="article"
@@ -47,19 +43,20 @@ const ArticleDetails = ({ article }) => {
           sx={{
             backgroundColor: "#ffffff",
             minHeight: "80px",
+            maxHeight: "120px",
           }}
         >
-          <Typography variant="h3">
+          <Typography variant="h5">
             <Link href="/" underline="hover" color="inherit">
               {article.title}
             </Link>
           </Typography>
-          <Typography>
-            <Link href="/" underline="hover" color="inherit">
-              {article.text}
-            </Link>
-          </Typography>
         </CardContent>
+        <CardActions>
+          <Button variant="contained" color="error" onClick={handleClick}>
+            Slet
+          </Button>
+        </CardActions>
       </Box>
     </Card>
   );

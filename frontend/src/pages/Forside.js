@@ -31,6 +31,7 @@ const MyButton = styled(Button)({
 
 export default function Forside() {
   const { posts, dispatch } = usePostsContext();
+  const { articles } = useArticlesContext();
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/posts");
@@ -43,6 +44,17 @@ export default function Forside() {
     };
 
     fetchPosts();
+
+    const fetchArticles = async () => {
+      const response = await fetch("/api/articles");
+      const json = await response.json();
+
+      if (response.ok) {
+        dispatch({ type: "SET_ARTICLES", payload: json });
+      }
+    };
+
+    fetchArticles();
   }, []);
   return (
     <>

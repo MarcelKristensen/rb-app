@@ -43,7 +43,7 @@ export default function kampOversigt() {
           }}
         >
           <Grid xs={48}>
-            <h1>Kommene kampe</h1>
+            <h1>Kommende kampe</h1>
             <Kampe
               status="VS"
               hold1={Roskilde}
@@ -81,9 +81,6 @@ export default function kampOversigt() {
                 />
               )}
             /> */}
-            <Typography align="center" marginRight="10%">
-              Side 1 ud 3
-            </Typography>
           </Grid>
           <Grid
             xs={2}
@@ -117,9 +114,6 @@ export default function kampOversigt() {
               aldersGruppe="Herre U15"
               hold="Roskilde - Nykøbing"
             />
-            <Typography align="center" marginRight="10%">
-              Side 1 ud 3
-            </Typography>
           </Grid>
         </Grid>
       </Box>

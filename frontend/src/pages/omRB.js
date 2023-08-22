@@ -19,8 +19,8 @@ export default function omRB() {
           mb: "3%",
         }}
       >
-        <Grid container spacing={2} columns={12} mt="3rem">
-          <Grid xs={9}>
+        <Grid container mt="3rem">
+          <Grid>
             <h1>Om RB1906</h1>
             <Typography>Senest opdateret 2023</Typography>
             <Typography my="1rem">
@@ -51,7 +51,7 @@ export default function omRB() {
             >
               <img
                 src={require("../images/logo/RBLogo.png")}
-                width={"40%"}
+                width={"20%"}
                 alt="BodyImage"
               ></img>
             </Box>
@@ -84,18 +84,22 @@ export default function omRB() {
               fødselsdag den 15. juni 1982 Roskildey IF´s første
               A-landsholdsspiller.
             </Typography>
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/rFYzcFrHny0"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </Grid>
-          <Grid xs={2} ml="5%">
-            SENESTE NYHEDER
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/rFYzcFrHny0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </Box>
           </Grid>
         </Grid>
       </Box>

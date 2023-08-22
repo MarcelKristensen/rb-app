@@ -36,14 +36,13 @@ const uHold = [
 ];
 
 function ResponsiveAppBar() {
-
-  const { logout } = useLogout()
-  const { user } = useAuthContext()
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
 
   const handleLogout = () => {
-    logout()
+    logout();
     window.location.reload(false);
-  }
+  };
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -113,22 +112,22 @@ function ResponsiveAppBar() {
                 width: "100%",
                 justifyContent: "right",
               }}
-            >         
-            {!user && (     
-              <Button>
-                <LoginModal text="Login" />
-                <img
-                  src={require("../images/logo/login.png")}
-                  alt="login"
-                ></img>
-              </Button>
-            )}
-            {user && (
-              <Button onClick={handleLogout}>
-                <Typography sx={{mr: "7%"}}>{user.email}</Typography>
-                <Typography>Logout</Typography>
-              </Button>
-            )}
+            >
+              {!user && (
+                <Button>
+                  <LoginModal text="Login" />
+                  <img
+                    src={require("../images/logo/login.png")}
+                    alt="login"
+                  ></img>
+                </Button>
+              )}
+              {user && (
+                <Button onClick={handleLogout}>
+                  <Typography sx={{ mr: "7%" }}>{user.email}</Typography>
+                  <Typography>Logout</Typography>
+                </Button>
+              )}
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
@@ -243,7 +242,11 @@ function ResponsiveAppBar() {
                 </Link>
               </NavItem>
               <NavItem>
-                <Link underline="none" color="inherit" href="https://roskildeboldklub.sport24team.dk/">
+                <Link
+                  underline="none"
+                  color="inherit"
+                  href="https://roskildeboldklub.sport24team.dk/"
+                >
                   Webshop
                 </Link>
               </NavItem>
@@ -256,7 +259,7 @@ function ResponsiveAppBar() {
               {/*
             DROP DOWN MENU FOR U HOLD
             */}
-              <Button
+              {/* <Button
                 onClick={handleClick}
                 onMouseOver={handleClick}
                 sx={{
@@ -269,7 +272,7 @@ function ResponsiveAppBar() {
                 }}
               >
                 Holdoversigt
-              </Button>
+              </Button> */}
               <Menu
                 id="simple-menu"
                 anchorEl={anchorEl}
