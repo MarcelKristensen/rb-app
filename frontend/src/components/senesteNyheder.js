@@ -13,7 +13,7 @@ const SenesteNyheder = (props) => {
         <CardContent
           sx={{
             backgroundColor: "#2669A4",
-            minHeight: "80px",
+            minHeight: "120px",
           }}
         >
           <Typography gutterBottom variant="latestNewsTitle" component="div">

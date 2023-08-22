@@ -128,12 +128,12 @@ export default function Forside() {
           justifyContent="center"
         >
           <Grid
-            container
+            container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
             sx={{ display: "flex", justifyContent: "space-between" }}
           >
             {posts &&
               posts.map((post) => (
-                <Grid>
+                <Grid item xs={2} sm={4} md={4}>
                   <Opslag key={post._id} post={post} />
                 </Grid>
               ))}

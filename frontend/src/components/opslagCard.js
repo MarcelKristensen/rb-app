@@ -26,7 +26,7 @@ const PostDetails = ({ post }) => {
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "start",
+          alignItems: "start"
         }}
       >
         <CardHeader
