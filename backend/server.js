@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const articleRoutes = require("./routes/articles");
 const userRoutes = require("./routes/user");
+const mediaRoutes = require("./routes/posts");
 
 // express app
 const app = express();
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 
 // routes
 app.use("/api/articles", articleRoutes);
+app.use("/api/posts", mediaRoutes);
 app.use("/api/user", userRoutes);
 
 // forbindelse til db

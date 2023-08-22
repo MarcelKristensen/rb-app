@@ -9,7 +9,6 @@ import Nyhed1 from "../images/nyhed/nyhed-1.png";
 
 const ArticleDetails = ({ article }) => {
   const { dispatch } = useArticlesContext();
-
   const handleClick = async () => {
     const response = await fetch("/api/articles/" + article._id, {
       method: "DELETE",

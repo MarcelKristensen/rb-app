@@ -9,6 +9,7 @@ import OmRB from "./pages/omRB";
 import Nyheder from "./pages/nyheder";
 import Medlemskab from "./pages/medlemskab";
 import KampOversigt from "./pages/kampoversigt";
+import Test from "./pages/test";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
@@ -63,6 +64,7 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
+            <Route path="/test" element={<Test />} />
             <Route path="/" element={<Forside />} />
             <Route path="registrering" element={<Registrering />} />
             <Route path="artikel" element={<Artikel />} />
