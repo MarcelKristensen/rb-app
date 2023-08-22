@@ -3,37 +3,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LoginModal from "./loginModal";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
-
 import {
   AppBar,
   Box,
   Toolbar,
   IconButton,
   Typography,
-  Menu,
   Container,
   Button,
-  MenuItem,
   styled,
   Link,
 } from "@mui/material";
-
-const pages = ["Om RB", "Nyheder", "Medlemskab", "Webshop", "Kampoversigt"];
-const settings = ["Profil", "Konto", "Logout"];
-const uHold = [
-  "U7",
-  "U8",
-  "U9",
-  "U10",
-  "U11",
-  "U12",
-  "U13",
-  "U14",
-  "U15",
-  "U16",
-  "U17",
-  "U18",
-];
 
 function ResponsiveAppBar() {
   const { logout } = useLogout();
@@ -43,43 +23,6 @@ function ResponsiveAppBar() {
     logout();
     window.location.reload(false);
   };
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  const [anchorEl, setAnchorEl] = React.useState(null);
-
-  function handleClick(event) {
-    if (anchorEl !== event.currentTarget) {
-      setAnchorEl(event.currentTarget);
-    }
-  }
-
-  function handleClose() {
-    setAnchorEl(null);
-  }
-
-  const MyMenuItem = styled(MenuItem)({
-    color: "black",
-    display: "block",
-    fontSize: 20,
-    fontWeight: 600,
-    textTransform: "none",
-    "&:hover": {
-      backgroundColor: "#F3B820",
-    },
-  });
 
   const NavItem = styled(Button)({
     my: 2,
@@ -123,33 +66,13 @@ function ResponsiveAppBar() {
                 </Button>
               )}
               {user && (
-                <Button onClick={handleLogout}>
+                <>
                   <Typography sx={{ mr: "7%" }}>{user.email}</Typography>
-                  <Typography>Logout</Typography>
-                </Button>
+                  <Button onClick={handleLogout}>
+                    <Typography>Logout</Typography>
+                  </Button>
+                </>
               )}
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
             </Box>
           </Toolbar>
         </Container>
@@ -175,30 +98,6 @@ function ResponsiveAppBar() {
               >
                 <MenuIcon />
               </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
             </Box>
             <Typography
               variant="h5"
@@ -255,49 +154,6 @@ function ResponsiveAppBar() {
                   Kampoversigt
                 </Link>
               </NavItem>
-
-              {/*
-            DROP DOWN MENU FOR U HOLD
-            */}
-              {/* <Button
-                onClick={handleClick}
-                onMouseOver={handleClick}
-                sx={{
-                  my: 2,
-                  color: "black",
-                  display: "block",
-                  fontSize: 20,
-                  fontWeight: 600,
-                  textTransform: "none",
-                }}
-              >
-                Holdoversigt
-              </Button> */}
-              <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-                MenuListProps={{ onMouseLeave: handleClose }}
-              >
-                {uHold.map((hold) => (
-                  <MyMenuItem
-                    key={hold}
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      my: 2,
-                      color: "black",
-                      display: "block",
-                      fontSize: 20,
-                      fontWeight: 600,
-                      textTransform: "none",
-                      minWidth: "120px",
-                    }}
-                  >
-                    {hold}
-                  </MyMenuItem>
-                ))}
-              </Menu>
             </Box>
           </Toolbar>
         </Container>

@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { Avatar, Box } from "@mui/material";
 import { ReplySharp, ThumbUpSharp } from "@mui/icons-material";
-import cardOpslag1 from "../images/cardOpslag-1.png";
+import cardOpslag1 from "../images/opslag/cardOpslag-1.png";
 
 const PostDetails = ({ post }) => {
   return (

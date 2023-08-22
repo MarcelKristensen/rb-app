@@ -13,7 +13,10 @@ import Hero from "../images/banner/rb-hero.png";
 import Opslag from "../components/opslagCard";
 import { useEffect } from "react";
 import { usePostsContext } from "../hooks/usePostContext";
-import { useArticlesContext } from "../hooks/useArticlesContext";
+import Nyhed1 from "../images/nyhed/nyhed1.jpg";
+import Nyhed2 from "../images/nyhed/nyhed2.png";
+import Nyhed3 from "../images/nyhed/nyhed3.png";
+import Nyhed4 from "../images/nyhed/nyhed4.jpeg";
 
 // Button er herfra: https://mui.com/system/styles/basics/#:~:text=to%20start%20editing-,Styled%20components%20API,-Note%3A%20this%20only
 const MyButton = styled(Button)({
@@ -31,7 +34,6 @@ const MyButton = styled(Button)({
 
 export default function Forside() {
   const { posts, dispatch } = usePostsContext();
-  const { articles } = useArticlesContext();
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch("/api/posts");
@@ -59,7 +61,6 @@ export default function Forside() {
   return (
     <>
       <HeroBanner header="Roskilde Boldklub" subtitle="af 1906" image={Hero} />
-
       {/* Nyheder */}
       <Box sx={{ mx: "20%" }}>
         <h1>Seneste nyheder</h1>
@@ -71,10 +72,30 @@ export default function Forside() {
           mx: "20%",
         }}
       >
-        {articles &&
-          articles.map((article) => (
-            <SenesteNyheder key={article._id} article={article} />
-          ))}
+        <SenesteNyheder
+          image={Nyhed1}
+          title="RB starter hold for de mindste"
+          date="02. Juni 2023"
+          alt="Nyhed 1"
+        ></SenesteNyheder>
+        <SenesteNyheder
+          image={Nyhed2}
+          title="Landskamp i Idrætsparken"
+          date="14. Maj 2023"
+          alt="Nyhed 2"
+        ></SenesteNyheder>
+        <SenesteNyheder
+          image={Nyhed3}
+          title="Generalforsmaling 2023"
+          date="02. Februar 2023"
+          alt="Nyhed 3"
+        ></SenesteNyheder>
+        <SenesteNyheder
+          image={Nyhed4}
+          title="Natalie blev tildelt Sommerland Sjælland børnelederpris"
+          date="25. Januar 2023"
+          alt="Nyhed 4"
+        ></SenesteNyheder>
       </Box>
       <Box
         sx={{
@@ -93,7 +114,6 @@ export default function Forside() {
           </MyButton>
         </Link>
       </Box>
-
       {/* Sponsor */}
       <Box
         sx={{
@@ -120,7 +140,6 @@ export default function Forside() {
           </Grid>
         </Stack>
       </Box>
-
       {/* Sponsor */}
       <Box
         sx={{
