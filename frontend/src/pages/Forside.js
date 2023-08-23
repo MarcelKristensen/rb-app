@@ -46,7 +46,7 @@ export default function Forside() {
     };
 
     fetchPosts();
-  }, []);
+  });
   return (
     <>
       <HeroBanner header="Roskilde Boldklub" subtitle="af 1906" image={Hero} />

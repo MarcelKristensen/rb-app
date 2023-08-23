@@ -20,7 +20,7 @@ const Nyheder = () => {
     };
 
     fetchArticles();
-  }, []);
+  });
 
   return (
     <Box
