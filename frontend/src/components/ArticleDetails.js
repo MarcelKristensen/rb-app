@@ -53,9 +53,11 @@ const ArticleDetails = ({ article }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button variant="contained" color="error" onClick={handleClick}>
-            Slet
-          </Button>
+        {user && (
+                <Button variant="contained" color="error" onClick={handleClick}>
+                Slet
+              </Button>
+              )}
         </CardActions>
       </Box>
     </Card>
