@@ -46,17 +46,6 @@ export default function Forside() {
     };
 
     fetchPosts();
-
-    const fetchArticles = async () => {
-      const response = await fetch("/api/articles");
-      const json = await response.json();
-
-      if (response.ok) {
-        dispatch({ type: "SET_ARTICLES", payload: json });
-      }
-    };
-
-    fetchArticles();
   }, []);
   return (
     <>
@@ -128,7 +117,9 @@ export default function Forside() {
           justifyContent="center"
         >
           <Grid
-            container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
+            container
+            spacing={{ xs: 2, md: 3 }}
+            columns={{ xs: 4, sm: 8, md: 12 }}
             sx={{ display: "flex", justifyContent: "space-between" }}
           >
             {posts &&

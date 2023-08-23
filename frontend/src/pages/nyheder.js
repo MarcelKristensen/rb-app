@@ -3,18 +3,15 @@ import { Box, Grid } from "@mui/material";
 import ArticleForm from "../components/articleForm.js";
 import { useArticlesContext } from "../hooks/useArticlesContext.js";
 import ArticleDetails from "../components/ArticleDetails.js";
-import { useLocation } from "react-router-dom";
 
 /*import { useAuthContext } from '../hooks/useAuthContext.js'*/
 
 const Nyheder = () => {
-  const location = useLocation();
-  const query = new URLSearchParams(location.search);
   const { articles, dispatch } = useArticlesContext();
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const response = await fetch("/api/articles");
+      const response = await fetch("/api/articles/");
       const json = await response.json();
 
       if (response.ok) {

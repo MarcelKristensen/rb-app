@@ -7,17 +7,17 @@ const {
   updateArticle,
 } = require("../controllers/articleController");
 
-const requireAuth = require('../middleware/requireAuth')
-const router = express.Router()
+const requireAuth = require("../middleware/requireAuth");
+const router = express.Router();
 
 //GET all articles
 router.get("/", getArticles);
 
-// KRÆVER AUTURISEREDE TOKEN FOR AT LOADE DISSE
-router.use(requireAuth)
-
 //GET a single article
 router.get("/:id", getArticle);
+
+// KRÆVER AUTURISEREDE TOKEN FOR AT LOADE DISSE
+router.use(requireAuth);
 
 //POST a article
 router.post("/", createArticle);

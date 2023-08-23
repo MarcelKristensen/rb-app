@@ -47,7 +47,7 @@ const ArticleDetails = ({ article }) => {
           }}
         >
           <Typography variant="h5">
-            <Link href="/" underline="hover" color="inherit">
+            <Link href="/artikel" underline="hover" color="inherit">
               {article.title}
             </Link>
           </Typography>
